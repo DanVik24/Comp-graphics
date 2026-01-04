@@ -145,7 +145,7 @@ int main()
         glUniform4f(vertexColorLocation, 0.6f, greenValue, 0.3f, 1.0f);
 
         glBindVertexArray(vao);
-        glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+        glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
