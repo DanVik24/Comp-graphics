@@ -12,6 +12,8 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 
+#include "Model.h"
+
 // Размер окна
 const unsigned int SCR_WIDTH = 1024;
 const unsigned int SCR_HEIGHT = 768;
@@ -34,7 +36,9 @@ float lastFrame = 0.0f;
 
 // Прототипы функций
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+
 void processInput(GLFWwindow* window);
+
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 std::string readShaderFile(const std::string& filePath);
 unsigned int compileShader(GLenum type, const std::string& source);
@@ -75,46 +79,14 @@ int main() {
         return 1;
     }
 
-    // ============ Настройка вершин пятиугольника ============
-    // Координаты (x, y, z) + цвет (r, g, b)
-    float vertices[] = {
-        // Вершины
-         0.0f,  0.5f,  0.0f,
-         0.47f, 0.15f, 0.0f,
-         0.29f, -0.4f, 0.0f,
-        -0.29f, -0.4f, 0.0f,
-        -0.47f, 0.15f, 0.0f,
-    };
-
-    unsigned int indices[] = {
-        0, 1, 2,  // треугольник 1
-        0, 2, 3,  // треугольник 2
-        0, 3, 4   // треугольник 3
-    };
-
-    unsigned int VAO, VBO, EBO;
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-
-    glBindVertexArray(VAO);
-
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindVertexArray(0);
-
+    printf("OpenGL Version: %s\n", glGetString(GL_VERSION));
+       
+        // ============ Настройка вершин пятиугольника ============
+   
     // Включаем тест глубины для корректного отображения
     glEnable(GL_DEPTH_TEST);
 
-
+    Model ourModel("lab3_model.obj");
     // ============ Загрузка и компиляция шейдеров ============
     std::string vertexShaderSource = readShaderFile("vertex_shader.glsl");
     std::string fragmentShaderSource = readShaderFile("fragment_shader.glsl");
@@ -129,6 +101,7 @@ int main() {
 
     // ============ 6. Главный цикл ============
     while (!glfwWindowShouldClose(window)) {
+
         // Вычисление времени между кадрами
         float currentFrame = static_cast<float>(glfwGetTime());
         deltaTime = currentFrame - lastFrame;
@@ -168,9 +141,9 @@ int main() {
         glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
         glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
-        // Отрисовка пятиугольника (9 индексов, 3 треугольника)
-        glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 9, GL_UNSIGNED_INT, 0);
+        glUniform3f(glGetUniformLocation(shaderProgram, "lightColor"), 0.3f, 1.0f, 1.0f);
+
+        ourModel.Draw();
 
         // Обмен буферов и обработка событий
         glfwSwapBuffers(window);
@@ -178,9 +151,6 @@ int main() {
     }
 
     // ============ 7. Освобождение ресурсов ============
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    glDeleteBuffers(1, &EBO);
     glDeleteProgram(shaderProgram);
     glfwTerminate();
 
