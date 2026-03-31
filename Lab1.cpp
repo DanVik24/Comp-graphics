@@ -29,7 +29,7 @@ float pitch = 0.0f;
 bool firstMouse = true;
 float sensitivity = 0.1f;
 
-float deltaTime= 0.0f;
+float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // Прототипы функций
@@ -54,7 +54,7 @@ int main() {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // ============ 2. Создание окна ============
-    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Лабораторная работа №4: Камера и матрицы", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Lab 4: Camera and Matrices", NULL, NULL);
     if (!window) {
         std::cerr << "Ошибка создания окна GLFW" << std::endl;
         glfwTerminate();
@@ -131,7 +131,7 @@ int main() {
     while (!glfwWindowShouldClose(window)) {
         // Вычисление времени между кадрами
         float currentFrame = static_cast<float>(glfwGetTime());
-        deltaTime= currentFrame - lastFrame;
+        deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
         // Обработка ввода (движение камеры WASD)
