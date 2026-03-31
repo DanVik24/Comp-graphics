@@ -1,12 +1,36 @@
 ﻿  Lab1.cpp
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(107,9): error C3861: processInput: идентификатор не найден
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(164,6): error C2084: функция "void framebuffer_size_callback(GLFWwindow *,int,int)" уже имеет текст реализации
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(35,6):
-      см. предыдущее определение "framebuffer_size_callback"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(188,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(189,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(193,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(194,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(195,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(196,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(60,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(61,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(65,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(66,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(67,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(68,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+     Создается библиотека C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\x64\Debug\Lab1.lib и объект C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\x64\Debug\Lab1.exp
+LINK : warning LNK4217: Символ "glewInit", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "glewGetErrorString", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewBindBuffer", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""private: void __cdecl Mesh::setupMesh(void)" (?setupMesh@Mesh@@AEAAXXZ)".
+LINK : warning LNK4217: Символ "__glewBufferData", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""private: void __cdecl Mesh::setupMesh(void)" (?setupMesh@Mesh@@AEAAXXZ)".
+LINK : warning LNK4217: Символ "__glewGenBuffers", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""private: void __cdecl Mesh::setupMesh(void)" (?setupMesh@Mesh@@AEAAXXZ)".
+LINK : warning LNK4217: Символ "__glewAttachShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewCompileShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewCreateProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewCreateShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewDeleteProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewDeleteShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewEnableVertexAttribArray", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""private: void __cdecl Mesh::setupMesh(void)" (?setupMesh@Mesh@@AEAAXXZ)".
+LINK : warning LNK4217: Символ "__glewGetProgramInfoLog", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewGetProgramiv", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewGetShaderInfoLog", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewGetShaderiv", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewGetUniformLocation", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewLinkProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewShaderSource", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewUniform1f", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewUniform3f", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewUniformMatrix4fv", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewUseProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewVertexAttribPointer", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""private: void __cdecl Mesh::setupMesh(void)" (?setupMesh@Mesh@@AEAAXXZ)".
+LINK : warning LNK4217: Символ "__glewBindVertexArray", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""public: void __cdecl Mesh::Draw(void)" (?Draw@Mesh@@QEAAXXZ)".
+LINK : warning LNK4217: Символ "__glewGenVertexArrays", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""private: void __cdecl Mesh::setupMesh(void)" (?setupMesh@Mesh@@AEAAXXZ)".
+LINK : warning LNK4217: Символ "glewExperimental", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+  Lab1.vcxproj -> C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\x64\Debug\Lab1.exe
