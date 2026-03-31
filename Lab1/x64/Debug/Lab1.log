@@ -1,17 +1,12 @@
 ﻿  Lab1.cpp
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(108,9): error C2660: processInput: функция не принимает 1 аргументов
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(39,6):
-       см. объявление "processInput"
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(108,9):
-      при попытке сопоставить список аргументов "(GLFWwindow *)"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(165,6): error C2084: функция "void framebuffer_size_callback(GLFWwindow *,int,int)" уже имеет текст реализации
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(107,9): error C3861: processInput: идентификатор не найден
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(164,6): error C2084: функция "void framebuffer_size_callback(GLFWwindow *,int,int)" уже имеет текст реализации
       C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(35,6):
       см. предыдущее определение "framebuffer_size_callback"
   
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(188,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
 C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(189,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(190,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(193,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
 C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(194,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(195,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(195,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
 C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(196,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(197,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных

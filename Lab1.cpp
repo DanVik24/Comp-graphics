@@ -36,7 +36,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
 }
 
-void processInput(GLFWwindow* window, double xpos, double ypos);
 
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 std::string readShaderFile(const std::string& filePath);
