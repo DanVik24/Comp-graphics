@@ -1,149 +1,36 @@
 ﻿  Lab1.cpp
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(23,44): error C2065: cameraPos: необъявленный идентификатор
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(23,34): error C2672: "glm::normalize": не найдена соответствующая перегруженная функция
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glm\ext\quaternion_geometric.hpp(47,26):
-      может быть "glm::qua<T,Q> glm::normalize(const glm::qua<T,Q> &)"
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glm\geometric.hpp(70,29):
-      или       "glm::vec<L,T,Q> glm::normalize(const glm::vec<L,T,Q> &)"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(29,30): error C2065: cameraPos: необъявленный идентификатор
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(29,41): error C2065: cameraPos: необъявленный идентификатор
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(29,53): error C2065: cameraFront: необъявленный идентификатор
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(31,6): error C2143: синтаксическая ошибка: отсутствие ";" перед "glm::vec3"
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(31,11): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(31,21): error C2440: инициализация: невозможно преобразовать "glm::vec3" в "int"
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(31,21):
-      Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(33,11): error C2374: cameraUp: переопределение; множественная инициализация
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(27,11):
-       см. объявление "cameraUp"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(33,11): error C2086: glm::vec3 cameraUp: переопределение
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(27,11):
-       см. объявление "cameraUp"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(81,28): error C2065: GLADloadproc: необъявленный идентификатор
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(81,41): error C2146: синтаксическая ошибка: отсутствие ")" перед идентификатором "glfwGetProcAddress"
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(81,10): error C3861: gladLoadGLLoader: идентификатор не найден
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(81,59): error C2059: синтаксическая ошибка: )
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(81,60): error C2059: синтаксическая ошибка: )
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(82,81): error C2059: синтаксическая ошибка: ;
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(90,5): error C2059: синтаксическая ошибка: if
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(90,69): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(90,69): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(96,5): error C2059: синтаксическая ошибка: if
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(116,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(116,5): error C2373: __glewGenVertexArrays: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(20944,42):
-       см. объявление "__glewGenVertexArrays"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(117,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(117,5): error C2373: __glewGenBuffers: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19967,37):
-       см. объявление "__glewGenBuffers"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(118,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(118,5): error C2373: __glewGenBuffers: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19967,37):
-       см. объявление "__glewGenBuffers"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(120,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(120,5): error C2373: __glewBindVertexArray: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(20942,42):
-       см. объявление "__glewBindVertexArray"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(122,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(122,5): error C2373: __glewBindBuffer: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19961,37):
-       см. объявление "__glewBindBuffer"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(123,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(123,5): error C2373: __glewBufferData: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19962,37):
-       см. объявление "__glewBufferData"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(125,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(125,5): error C2373: __glewBindBuffer: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19961,37):
-       см. объявление "__glewBindBuffer"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(126,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(126,5): error C2373: __glewBufferData: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19962,37):
-       см. объявление "__glewBufferData"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(129,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(129,5): error C2373: __glewVertexAttribPointer: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(20072,46):
-       см. объявление "__glewVertexAttribPointer"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(130,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(130,5): error C2373: __glewEnableVertexAttribArray: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19991,50):
-       см. объявление "__glewEnableVertexAttribArray"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(132,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(132,5): error C2373: __glewVertexAttribPointer: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(20072,46):
-       см. объявление "__glewVertexAttribPointer"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(133,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(133,5): error C2373: __glewEnableVertexAttribArray: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19991,50):
-       см. объявление "__glewEnableVertexAttribArray"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(135,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(135,5): error C2373: __glewBindVertexArray: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(20942,42):
-       см. объявление "__glewBindVertexArray"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(138,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(138,5): error C2365: glEnable: переопределение; предыдущим определением было "функция"
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(920,23):
-       см. объявление "glEnable"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(141,5): error C2059: синтаксическая ошибка: while
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(141,44): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(141,44): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(191,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(191,5): error C2373: __glewDeleteVertexArrays: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(20943,45):
-       см. объявление "__glewDeleteVertexArrays"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(192,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(192,5): error C2373: __glewDeleteBuffers: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19964,40):
-       см. объявление "__glewDeleteBuffers"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(193,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(193,5): error C2373: __glewDeleteBuffers: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19964,40):
-       см. объявление "__glewDeleteBuffers"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(194,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(194,5): error C2373: __glewDeleteProgram: переопределение; различные модификаторы типа
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glew-2.1.0\include\GL\glew.h(19986,40):
-       см. объявление "__glewDeleteProgram"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(195,5): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(195,5): error C2556: int glfwTerminate(void): перегруженная функция отличается от "void glfwTerminate(void)" только возвращаемым типом
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glfw-3.4.bin.WIN64\include\GLFW\glfw3.h(2254,14):
-       см. объявление "glfwTerminate"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(195,5): error C2371: glfwTerminate: переопределение; различные базовые типы
-      C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\glfw-3.4.bin.WIN64\include\GLFW\glfw3.h(2254,14):
-       см. объявление "glfwTerminate"
-  
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(197,5): error C2059: синтаксическая ошибка: return
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(198,1): error C2059: синтаксическая ошибка: }
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(198,1): error C2143: синтаксическая ошибка: отсутствие ";" перед "}"
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(203,75): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(203,75): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(215,19): error C2677: бинарный "+=": не найден глобальный оператор, принимающий тип "glm::vec<3,float,glm::packed_highp>" (или приемлемое преобразование отсутствует)
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(217,19): error C2677: бинарный "-=": не найден глобальный оператор, принимающий тип "glm::vec<3,float,glm::packed_highp>" (или приемлемое преобразование отсутствует)
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(219,19): error C2677: бинарный "-=": не найден глобальный оператор, принимающий тип "glm::vec<3,float,glm::packed_highp>" (или приемлемое преобразование отсутствует)
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(221,19): error C2677: бинарный "+=": не найден глобальный оператор, принимающий тип "glm::vec<3,float,glm::packed_highp>" (или приемлемое преобразование отсутствует)
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(293,30): error C2065: fragmentShader: необъявленный идентификатор
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(297,29): error C2065: fragmentShader: необъявленный идентификатор
-C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(310,20): error C2065: fragmentShader: необъявленный идентификатор
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(218,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(219,17): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(223,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(224,19): warning C4244: инициализация: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(225,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\Lab1.cpp(226,13): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+     Создается библиотека C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\x64\Debug\Lab1.lib и объект C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\x64\Debug\Lab1.exp
+LINK : warning LNK4217: Символ "glewInit", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "glewGetErrorString", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewBindBuffer", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewBufferData", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewDeleteBuffers", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewGenBuffers", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewAttachShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewCompileShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewCreateProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewCreateShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewDeleteProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewDeleteShader", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewEnableVertexAttribArray", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewGetProgramInfoLog", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewGetProgramiv", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewGetShaderInfoLog", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewGetShaderiv", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewGetUniformLocation", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewLinkProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl createShaderProgram(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?createShaderProgram@@YAIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z)".
+LINK : warning LNK4217: Символ "__glewShaderSource", определенный в "glew.obj", импортирован "Lab1.obj" в функции ""unsigned int __cdecl compileShader(unsigned int,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (?compileShader@@YAIIAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)".
+LINK : warning LNK4217: Символ "__glewUniformMatrix4fv", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewUseProgram", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewVertexAttribPointer", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewBindVertexArray", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewDeleteVertexArrays", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "__glewGenVertexArrays", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+LINK : warning LNK4217: Символ "glewExperimental", определенный в "glew.obj", импортирован "Lab1.obj" в функции "main".
+  Lab1.vcxproj -> C:\Users\Vik\Documents\ирниту\3 курс\Комп. граф\Labs\x64\Debug\Lab1.exe

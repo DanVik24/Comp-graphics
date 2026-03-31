@@ -17,30 +17,19 @@ const unsigned int SCR_WIDTH = 1024;
 const unsigned int SCR_HEIGHT = 768;
 
 // Камера
-glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f);
-
-glm::vec3 cameraTarget = glm::vec3(0.0f, 0.0f, 0.0f);
-glm::vec3 cameraDirection = glm::normalize(cameraPos - cameraTarget);
-
-glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f);
-glm::vec3 cameraRight = glm::normalize(glm::cross(up, cameraDirection));
-glm::vec3 cameraUp = glm::cross(cameraDirection, cameraRight);
-
-glm::mat4 view = glm::lookAt(cameraPos, cameraPos + cameraFront, cameraUp)
-
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
-float yaw = -90.0f;   // рыскание (поворот вокруг Y)
-float pitch = 0.0f;   // тангаж   (поворот вокруг X)
+float fov = 45.0f;
+float yaw = -90.0f;
+float pitch = 0.0f;
 bool firstMouse = true;
 float sensitivity = 0.1f;
 
-// -------------------- Управление временем --------------------
-float deltaTime = 0.0f;
+float deltaTime= 0.0f;
 float lastFrame = 0.0f;
 
 // Прототипы функций
@@ -61,6 +50,7 @@ int main() {
     // Настройка версии OpenGL 4.6 (Core Profile)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
     // ============ 2. Создание окна ============
@@ -74,36 +64,26 @@ int main() {
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
+
     // Скрываем курсор и фиксируем его в центре окна (режим FPS-камеры)
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glewExperimental = GL_TRUE;
 
-    // ============ 3. Инициализация GLAD ============
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-        std::cerr << "Ошибка инициализации GLAD" << std::endl;
-        return -1;
+    GLenum ret = glewInit();
+    if (ret != GLEW_OK) {
+        fprintf(stderr, "ERROR: %s\n", glewGetErrorString(ret));
+        return 1;
     }
 
-    // ============ 4. Загрузка и компиляция шейдеров ============
-    std::string vertexShaderSource = readShaderFile("vertex_shader.glsl");
-    std::string fragmentShaderSource = readShaderFile("fragment_shader.glsl");
-
-    if (vertexShaderSource.empty() || fragmentShaderSource.empty()) {
-        std::cerr << "ОШИБКА: не удалось загрузить файлы шейдеров!" << std::endl;
-        return -1;
-    }
-
-    unsigned int shaderProgram = createShaderProgram(vertexShaderSource, fragmentShaderSource);
-    if (shaderProgram == 0) return -1;
-
-    // ============ 5. Настройка вершин пятиугольника ============
+    // ============ Настройка вершин пятиугольника ============
     // Координаты (x, y, z) + цвет (r, g, b)
     float vertices[] = {
-        // Вершины            // Цвета
-         0.0f,  0.5f,  0.0f,  1.0f, 0.0f, 0.0f,  // 0 - красный
-         0.47f, 0.15f, 0.0f,  0.0f, 1.0f, 0.0f,  // 1 - зелёный
-         0.29f, -0.4f, 0.0f,  0.0f, 0.0f, 1.0f,  // 2 - синий
-        -0.29f, -0.4f, 0.0f,  1.0f, 1.0f, 0.0f,  // 3 - жёлтый
-        -0.47f, 0.15f, 0.0f,  1.0f, 0.0f, 1.0f   // 4 - пурпурный
+        // Вершины
+         0.0f,  0.5f,  0.0f,
+         0.47f, 0.15f, 0.0f,
+         0.29f, -0.4f, 0.0f,
+        -0.29f, -0.4f, 0.0f,
+        -0.47f, 0.15f, 0.0f,
     };
 
     unsigned int indices[] = {
@@ -125,23 +105,33 @@ int main() {
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-    // Атрибут позиции (location = 0)
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    // Атрибут цвета (location = 1)
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
 
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
 
     // Включаем тест глубины для корректного отображения
     glEnable(GL_DEPTH_TEST);
 
+
+    // ============ Загрузка и компиляция шейдеров ============
+    std::string vertexShaderSource = readShaderFile("vertex_shader.glsl");
+    std::string fragmentShaderSource = readShaderFile("fragment_shader.glsl");
+
+    if (vertexShaderSource.empty() || fragmentShaderSource.empty()) {
+        std::cerr << "ОШИБКА: не удалось загрузить файлы шейдеров!" << std::endl;
+        return -1;
+    }
+
+    unsigned int shaderProgram = createShaderProgram(vertexShaderSource, fragmentShaderSource);
+    if (shaderProgram == 0) return -1;
+
     // ============ 6. Главный цикл ============
     while (!glfwWindowShouldClose(window)) {
         // Вычисление времени между кадрами
         float currentFrame = static_cast<float>(glfwGetTime());
-        deltaTime = currentFrame - lastFrame;
+        deltaTime= currentFrame - lastFrame;
         lastFrame = currentFrame;
 
         // Обработка ввода (движение камеры WASD)
@@ -223,35 +213,36 @@ void processInput(GLFWwindow* window) {
 
 // Обработка движения мыши (поворот камеры)
 void mouse_callback(GLFWwindow* window, double xpos, double ypos) {
-    float xposf = static_cast<float>(xpos);
-    float yposf = static_cast<float>(ypos);
-
-    if (firstMouse) {
-        lastX = xposf;
-        lastY = yposf;
+    if (firstMouse)
+    {
+        lastX = xpos;
+        lastY = ypos;
         firstMouse = false;
-        return;
     }
 
-    float xoffset = (xposf - lastX) * sensitivity;
-    float yoffset = (lastY - yposf) * sensitivity; // перевёрнутый Y, чтобы направление мыши было естественным
+    float xoffset = xpos - lastX;
+    float yoffset = lastY - ypos;
+    lastX = xpos;
+    lastY = ypos;
 
-    lastX = xposf;
-    lastY = yposf;
+    float sensitivity = 0.1f;
+    xoffset *= sensitivity;
+    yoffset *= sensitivity;
 
     yaw += xoffset;
     pitch += yoffset;
 
-    // Ограничиваем угол тангажа, чтобы не было опрокидывания камеры
-    if (pitch > 89.0f)  pitch = 89.0f;
-    if (pitch < -89.0f) pitch = -89.0f;
 
-    // Вычисляем новое направление камеры из углов Эйлера
-    glm::vec3 direction;
-    direction.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-    direction.y = sin(glm::radians(pitch));
-    direction.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-    cameraFront = glm::normalize(direction);
+    if (pitch > 89.0f)
+        pitch = 89.0f;
+    if (pitch < -89.0f)
+        pitch = -89.0f;
+
+    glm::vec3 front;
+    front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+    front.y = sin(glm::radians(pitch));
+    front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+    cameraFront = glm::normalize(front);
 }
 
 // Чтение текста шейдера из файла
@@ -274,6 +265,7 @@ unsigned int compileShader(GLenum type, const std::string& source) {
     glShaderSource(shader, 1, &src, NULL);
     glCompileShader(shader);
 
+
     int success;
     char infoLog[512];
     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
@@ -288,7 +280,7 @@ unsigned int compileShader(GLenum type, const std::string& source) {
 // Создание шейдерной программы из двух скомпилированных шейдеров
 unsigned int createShaderProgram(const std::string& vertexSource, const std::string& fragmentSource) {
     unsigned int vertexShader = compileShader(GL_VERTEX_SHADER, vertexSource);
-    //unsigned int fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentSource);
+    unsigned int fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentSource);
 
     if (vertexShader == 0 || fragmentShader == 0) return 0;
 
