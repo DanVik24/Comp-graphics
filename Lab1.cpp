@@ -31,7 +31,9 @@ float sensitivity = 0.1f;
 float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
-
+float move_head_v = 0.0f;
+float move_head_h = 0.0f;
+float rotate_shpind = 0.0f;
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
