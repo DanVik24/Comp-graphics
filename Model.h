@@ -1,98 +1,136 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include <GL/GL.h>
+
+#include <GL\GL.h>
 #include "GLFW/glfw3.h"
-#include "glm/glm.hpp"
-#include "glm/gtc/matrix_transform.hpp"
-#include "assimp/Importer.hpp"
-#include "assimp/scene.h"
-#include "assimp/postprocess.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 #include "Mesh.h"
+#include "GrafShaders.h"
+
 #include <string>
-#include <vector>
-#include <map>
+#include <fstream>
+#include <sstream>
 #include <iostream>
-#include <memory>
+#include <vector>
+using namespace std;
 
-class Model {
+class Model
+{
 public:
-    struct MeshEntry {
-        Mesh mesh;
-        std::string name;
-
-        // Конструктор, принимающий Mesh и имя
-        MeshEntry(Mesh&& m, std::string n)
-            : mesh(std::move(m)), name(std::move(n)) {
-        }
-    };
-
-    std::vector<MeshEntry> meshes;
-
-    Model(std::string const& path) {
+    
+    vector<Mesh> meshes;
+    string directory;
+        
+    Model(string const& path) 
+    {
         loadModel(path);
     }
+       
+    void Draw(Shader& shader, glm::mat4* modelMatrices)
+    {
+        for (unsigned int i = 0; i < meshes.size(); i++) {
+            unsigned int modelLoc = glGetUniformLocation(shader.shaderProgram, "model");
 
-    void Draw(unsigned int shaderProgram, const std::map<std::string, glm::mat4>& partMatrices) {
-        glUseProgram(shaderProgram);
-        for (auto& entry : meshes) {
-            auto it = partMatrices.find(entry.name);
-            glm::mat4 modelMat = (it != partMatrices.end()) ? it->second : glm::mat4(1.0f);
-            glUniformMatrix4fv(glGetUniformLocation(shaderProgram, "model"), 1, GL_FALSE, glm::value_ptr(modelMat));
-            entry.mesh.Draw();
+            if (i == 0) {
+                // Ходовая балка - всегда единичная матрица
+                glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(glm::mat4(1.0f)));
+            }
+            else if (i == 3) {
+                // РТК - используем матрицу 0
+                glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelMatrices[1]));
+            }
+            else if (i == 2 || i == 1) {
+                // Модуль - используем матрицу 1
+                glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelMatrices[0]));
+            }
+            else if (i == 4) {
+                // Манипулятор - используем матрицу 2
+                glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(modelMatrices[2]));
+            }
+
+            meshes[i].Draw(shader);
         }
     }
 
 private:
-    void loadModel(std::string const& path) {
+    
+    void loadModel(string const& path)
+    {
         Assimp::Importer importer;
+
         const aiScene* scene = importer.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
-        if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) {
-            std::cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << std::endl;
+
+        if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
+        {
+            cout << "ERROR::ASSIMP:: " << importer.GetErrorString() << endl;
             return;
         }
+        directory = path.substr(0, path.find_last_of('/'));
+
         processNode(scene->mRootNode, scene);
     }
-
-    void processNode(aiNode* node, const aiScene* scene) {
-        for (unsigned int i = 0; i < node->mNumMeshes; ++i) {
+        
+    void processNode(aiNode* node, const aiScene* scene)
+    {
+        for (unsigned int i = 0; i < node->mNumMeshes; i++)
+        {
             aiMesh* mesh = scene->mMeshes[node->mMeshes[i]];
-            std::string name;
-            if (node->mName.length > 0)
-                name = std::string(node->mName.C_Str());
-            else if (mesh->mName.length > 0)
-                name = std::string(mesh->mName.C_Str());
-            else
-                name = "unnamed_" + std::to_string(i);
-
-            // Создаём MeshEntry с перемещением результата processMesh
-            meshes.emplace_back(processMesh(mesh, scene), std::move(name));
+            meshes.push_back(processMesh(mesh, scene));
         }
-        for (unsigned int i = 0; i < node->mNumChildren; ++i) {
+
+        for (unsigned int i = 0; i < node->mNumChildren; i++)
+        {
             processNode(node->mChildren[i], scene);
         }
     }
 
-    Mesh processMesh(aiMesh* mesh, const aiScene* scene) {
-        std::vector<Vertex> vertices;
-        std::vector<unsigned int> indices;
+    Mesh processMesh(aiMesh* mesh, const aiScene* scene)
+    {
+        vector<Vertex> vertices;
+        vector<unsigned int> indices;
 
-        for (unsigned int i = 0; i < mesh->mNumVertices; ++i) {
+        for (unsigned int i = 0; i < mesh->mNumVertices; i++)
+        {
             Vertex vertex;
-            vertex.Position = glm::vec3(mesh->mVertices[i].x, mesh->mVertices[i].y, mesh->mVertices[i].z);
+            glm::vec3 vector;
+
+            vector.x = mesh->mVertices[i].x;
+            vector.y = mesh->mVertices[i].y;
+            vector.z = mesh->mVertices[i].z;
+            vertex.Position = vector;
+
             if (mesh->HasNormals())
-                vertex.Normal = glm::vec3(mesh->mNormals[i].x, mesh->mNormals[i].y, mesh->mNormals[i].z);
-            else
-                vertex.Normal = glm::vec3(0.0f);
+            {
+                vector.x = mesh->mNormals[i].x;
+                vector.y = mesh->mNormals[i].y;
+                vector.z = mesh->mNormals[i].z;
+                vertex.Normal = vector;
+            }
+            else {
+                vertex.Normal = glm::vec3(0.0f, 0.0f, 0.0f);
+            }
+
             vertices.push_back(vertex);
         }
-        for (unsigned int i = 0; i < mesh->mNumFaces; ++i) {
+
+        for (unsigned int i = 0; i < mesh->mNumFaces; i++)
+        {
             aiFace face = mesh->mFaces[i];
-            for (unsigned int j = 0; j < face.mNumIndices; ++j)
+            for (unsigned int j = 0; j < face.mNumIndices; j++)
                 indices.push_back(face.mIndices[j]);
         }
-        return Mesh(std::move(vertices), std::move(indices));
-    }
+
+        return Mesh(vertices, indices);
+    }        
 };
 
 #endif
+
+
